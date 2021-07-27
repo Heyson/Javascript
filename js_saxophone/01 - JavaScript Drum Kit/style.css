@@ -1,6 +1,6 @@
 html {
   font-size: 10px;
-  background: url('./background.jpg') bottom center;
+  background-color: #000;
   background-size: cover;
 }
 
@@ -10,12 +10,21 @@ body,html {
   font-family: sans-serif;
 }
 
+#sax_img {
+  max-height: 700px;
+  margin: 20px auto;
+  display: block;
+  clear: both;
+}
+
 .keys {
   display: flex;
   flex: 1;
-  min-height: 100vh;
+  min-height: 30vh;
   align-items: center;
   justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .key {
