@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>JS Saxophone</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/7ddfb2c874.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="keys">
@@ -45,6 +46,16 @@
     </div>
   </div>
 <div> <img id="sax_img" src="saxophone-graphic.jpg"/></div>
+<div>
+  <i data-key="65" class='fas fa-music note_one note'></i>
+  <i data-key="83" class='fas fa-music note_two note'></i>
+  <i data-key="68" class='fas fa-music note_three note'></i>
+  <i data-key="70" class='fas fa-music note_four note'></i>
+  <i data-key="71" class='fas fa-music note_five note'></i>
+  <i data-key="72" class='fas fa-music note_six note'></i>
+  <i data-key="74" class='fas fa-music note_seven note'></i>
+  <i data-key="76" class='fas fa-music note_eight note'></i>
+</div>
   <audio data-key="65" src="sounds/Sax_1.wav"></audio>
   <audio data-key="83" src="sounds/Sax_2.wav"></audio>
   <audio data-key="68" src="sounds/Sax_3.mp3"></audio>
@@ -61,20 +72,27 @@
   function playSound(e){
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    const note = document.querySelector(`.note[data-key="${e.keyCode}"]`);
     if(!audio) return; // Stop the function from running all together.
     audio.currentTime = 0; // Rewinds to start
     audio.play();
-    key.classList.add('playing');    
+    key.classList.add('playing');
+    note.classList.add('note_active');   
   }
 
   function removeTransiton(e) {
     if (e.propertyName !== 'transform') return; // skip it if its not a transform
     console.log(e.propertyName);
     this.classList.remove('playing');
+    this.classList.remove('note_active');
   }
 
   const keys = document.querySelectorAll('.key');
   keys.forEach(key => key.addEventListener('transitionend', removeTransiton));
+  window.addEventListener('keydown', playSound);
+
+  const notes = document.querySelectorAll('.note');
+  notes.forEach(note => note.addEventListener('transitionend', removeTransiton));
   window.addEventListener('keydown', playSound);
 </script>
 

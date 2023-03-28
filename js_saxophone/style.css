@@ -58,3 +58,102 @@ kbd {
   letter-spacing: .1rem;
   color: #ffc600;
 }
+
+.note_one {
+  font-size: 48px;
+  color: yellow;
+  position: absolute;
+  top: 500px;
+  right: 285px;
+  rotate: 20deg;
+  opacity: 0;
+}
+
+.note_two {
+  font-size: 36px;
+  color: green;
+  position: absolute;
+  top: 600px;
+  right: 285px;
+  rotate: 20deg;
+  opacity: 0;
+}
+
+.note_three {
+  font-size: 24px;
+  color: red;
+  position: absolute;
+  top: 700px;
+  right: 285px;
+  rotate: 20deg;
+  opacity: 0;
+ 
+}
+
+.note_four {
+  font-size: 48px;
+  color: blue;
+  position: absolute;
+  top: 850px;
+  right: 380px;
+  rotate: 20deg;
+  opacity: 0;
+  
+}
+
+.note_five {
+  font-size: 36px;
+  color: grey;
+  position: absolute;
+  top: 900px;
+  right: 380px;
+  rotate: 20deg;
+  opacity: 0;
+  
+}
+.note_six {
+  font-size: 24px;
+  color: pink;
+  position: absolute;
+  top: 950px;
+  right: 380px;
+  rotate: 20deg;
+  opacity: 0;
+  
+}
+.note_seven {
+  font-size: 48px;
+  color: purple;
+  position: absolute;
+  top: 975px;
+  right: 380px;
+  rotate: 20deg;
+  opacity: 0;
+  
+}
+.note_eight {
+  font-size: 36px;
+  color: orange;
+  position: absolute;
+  top: 1000px;
+  right: 380px;
+  rotate: 20deg;
+  opacity: 0;
+  
+}
+
+.note_active {
+  rotate: 20deg;
+  animation-iteration-count: 2;
+  animation: notePlay 2s;
+ 
+}
+
+@keyframes notePlay {
+  from {bottom: 0px;}
+  to {top: 200px;}
+  from {opacity: 1;}
+  to {opacity: 0;}
+  from{rotate: 20deg;}
+  to{rotate: 25deg;}
+}
