@@ -152,13 +152,13 @@ kbd {
 .sax_play {
   animation-iteration-count: infinite;
   rotate: 45deg;
-  animation: sax_Playing 800ms;
+  animation: sax_Playing 600ms;
 
 }
 
 @keyframes sax_Playing {
   from{rotate: 0deg;}
-  to{rotate: 25deg;}
+  to{rotate: 45deg;}
   from{rotate: 25deg;}
   to{rotate: 0deg;}
   
