@@ -45,7 +45,7 @@
       <span class="sound">long</span>
     </div>
   </div>
-<div> <img id="sax_img" src="saxophone-graphic.jpg"/></div>
+<div> <img  class ="sax" id="sax_img" src="saxophone-graphic.jpg"/></div>
 <div>
   <i data-key="65" class='fas fa-music note_one note'></i>
   <i data-key="83" class='fas fa-music note_two note'></i>
@@ -73,27 +73,33 @@
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
     const note = document.querySelector(`.note[data-key="${e.keyCode}"]`);
+    const sax = document.querySelector(`.sax`);
     if(!audio) return; // Stop the function from running all together.
     audio.currentTime = 0; // Rewinds to start
     audio.play();
     key.classList.add('playing');
-    note.classList.add('note_active');   
+    note.classList.add('note_active');
+    note.addEventListener("animationend", function(e){
+      note.classList.remove('note_active')
+    });
+    sax.classList.add('sax_play');
+    sax.addEventListener("animationend", function(e){
+      sax.classList.remove('sax_play')
+    });
   }
+
+
 
   function removeTransiton(e) {
     if (e.propertyName !== 'transform') return; // skip it if its not a transform
     console.log(e.propertyName);
     this.classList.remove('playing');
-    this.classList.remove('note_active');
   }
 
   const keys = document.querySelectorAll('.key');
   keys.forEach(key => key.addEventListener('transitionend', removeTransiton));
   window.addEventListener('keydown', playSound);
-
-  const notes = document.querySelectorAll('.note');
-  notes.forEach(note => note.addEventListener('transitionend', removeTransiton));
-  window.addEventListener('keydown', playSound);
+  
 </script>
 
 

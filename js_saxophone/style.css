@@ -144,9 +144,24 @@ kbd {
 
 .note_active {
   rotate: 20deg;
-  animation-iteration-count: 2;
-  animation: notePlay 2s;
- 
+  animation-iteration-count: infinite;
+  animation: notePlay 800ms;
+
+}
+
+.sax_play {
+  animation-iteration-count: infinite;
+  rotate: 45deg;
+  animation: sax_Playing 800ms;
+
+}
+
+@keyframes sax_Playing {
+  from{rotate: 0deg;}
+  to{rotate: 25deg;}
+  from{rotate: 25deg;}
+  to{rotate: 0deg;}
+  
 }
 
 @keyframes notePlay {
@@ -156,4 +171,5 @@ kbd {
   to {opacity: 0;}
   from{rotate: 20deg;}
   to{rotate: 25deg;}
+ 
 }
