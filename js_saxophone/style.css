@@ -145,7 +145,7 @@ kbd {
 .note_active {
   rotate: 20deg;
   animation-iteration-count: infinite;
-  animation: notePlay 800ms;
+  animation: notePlay 900ms;
 
 }
 
